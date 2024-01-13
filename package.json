@@ -2,9 +2,12 @@
   "name": "sweebog",
   "version": "1.0.0",
   "description": "sweeborg galaxy",
+  "homepage": "https://x1unix.github.io/sweeborg-space",
   "main": "index.js",
   "scripts": {
-    "start": "npx vite"
+    "start": "npx vite",
+    "predeploy": "npx vite build",
+    "deploy": "npx gh-pages -d dist"
   },
   "author": "kotkovdev@gmail.com",
   "license": "MIT",
@@ -12,6 +15,7 @@
     "three": "^0.160.0"
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "vite": "^5.0.11"
   }
 }
