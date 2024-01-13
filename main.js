@@ -2,6 +2,8 @@ import * as THREE from 'three';
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+const { BASE_URL} = import.meta.env
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -34,7 +36,7 @@ window.addEventListener('resize', () => {
     resizeTimeout = setTimeout(resizeView, RESIZE_DEBOUNCE_DELAY_MS);
 });
 
-// const background = new THREE.TextureLoader().load("/space.jpeg", function() {
+// const background = new THREE.TextureLoader().load(`${BASE_URL}/space.jpeg`, function() {
 //     background.wrapS = THREE.RepeatWrapping;
 //     background.wrapT = THREE.RepeatWrapping;
 //     background.repeat.set( 1, 1 );
@@ -43,38 +45,38 @@ window.addEventListener('resize', () => {
 // });
 
 // const refractionCube = new THREE.CubeTextureLoader().load( [
-//     "/bkg/blue/bkg1_front.png",
-//     "/bkg/blue/bkg1_back.png",
+//     `${BASE_URL}/bkg/blue/bkg1_front.png`,
+//     `${BASE_URL}/bkg/blue/bkg1_back.png`,
     
-//     "/bkg/blue/bkg1_top.png",
-//     "/bkg/blue/bkg1_bot.png",
+//     `${BASE_URL}/bkg/blue/bkg1_top.png`,
+//     `${BASE_URL}/bkg/blue/bkg1_bot.png`,
     
-//     "/bkg/blue/bkg1_left.png",
-//     "/bkg/blue/bkg1_right.png",
+//     `${BASE_URL}/bkg/blue/bkg1_left.png`,
+//     `${BASE_URL}/bkg/blue/bkg1_right.png`,
 // ] , function() {
-//     console.log("asd")
+//     console.log(`asd`)
 //     refractionCube.mapping = THREE.CubeRefractionMapping;
 //     scene.background = refractionCube;
 // });
 
 const refractionCube = new THREE.CubeTextureLoader().load( [
-    "/skybox/front.png",
-    "/skybox/back.png",
+    `${BASE_URL}/skybox/front.png`,
+    `${BASE_URL}/skybox/back.png`,
 
-    "/skybox/top.png",
-    "/skybox/bottom.png",
+    `${BASE_URL}/skybox/top.png`,
+    `${BASE_URL}/skybox/bottom.png`,
 
-    "/skybox/left.png",
-    "/skybox/right.png",
+    `${BASE_URL}/skybox/left.png`,
+    `${BASE_URL}/skybox/right.png`,
     
 ] , function() {
-    console.log("asd")
+    console.log(`asd`)
     refractionCube.mapping = THREE.CubeRefractionMapping;
     scene.background = refractionCube;
 });
 
 // load a texture, set wrap mode to repeat
-const texture = new THREE.TextureLoader().load( "/texture.jpeg" , function() {
+const texture = new THREE.TextureLoader().load( `${BASE_URL}/texture.jpeg` , function() {
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
     texture.repeat.set( 1, 1 );
