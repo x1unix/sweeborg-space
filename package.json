@@ -1,0 +1,17 @@
+{
+  "name": "sweebog",
+  "version": "1.0.0",
+  "description": "sweeborg galaxy",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx vite"
+  },
+  "author": "kotkovdev@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.11"
+  }
+}
