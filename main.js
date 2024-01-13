@@ -2,7 +2,10 @@ import * as THREE from 'three';
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-const { BASE_URL} = import.meta.env
+let { BASE_URL } = import.meta.env
+if (BASE_URL === '/') {
+    BASE_URL = window.location.origin
+}
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
